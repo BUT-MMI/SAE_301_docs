@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sujet SAÉ 301-303 · Documentation SAÉ 301 / 303 — IUT d’Arles</title>
+  <meta name="description" content="Synthèse complète et PDF intégré du sujet SAÉ 301-303 : Portail de covoiturage de l’IUT d’Arles.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
+  <header class="site-header">
+    <div class="header-topbar">
+      <div class="container header-topbar-inner">
+        <span>Aix Marseille Université (amU) · IUT d’Arles — BUT MMI2</span>
+        <span>SAÉ 301 / 303 · Portail de covoiturage</span>
+      </div>
+    </div>
+    <div class="container header-inner">
+      <a class="brand-link" href="index.html" aria-label="Accueil du portail documentaire SAÉ 301-303">
+        <svg class="brand-logo-svg" viewBox="0 0 180 62" role="img" aria-label="Logotype amU Aix Marseille Université">
+          <text x="2" y="40" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="500" letter-spacing="-2" fill="currentColor">amU</text>
+          <text x="2" y="56" font-family="Inter, Arial, sans-serif" font-size="11.5" font-weight="400" fill="currentColor">Aix</text>
+          <text x="41" y="56" font-family="Inter, Arial, sans-serif" font-size="11.5" font-weight="400" fill="currentColor">Marseille</text>
+          <text x="108" y="56" font-family="Inter, Arial, sans-serif" font-size="11.5" font-weight="400" fill="currentColor">Université</text>
+        </svg>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-title">
+          <strong>Documentation SAÉ 301 / 303</strong>
+          <span>Design d’expérience &amp; intégration</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
+        Menu ☰
+      </button>
+
+      <nav class="site-nav" id="site-nav" data-site-nav aria-label="Navigation principale">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="index.html">Accueil</a></li>
+          <li><a class="nav-link" href="sujet.html" aria-current="page">Sujet SAÉ</a></li>
+          <li><a class="nav-link" href="fiche-de-route.html">Fiche de route</a></li>
+          <li><a class="nav-link" href="charte-amu.html">Charte amU</a></li>
+          <li><a class="nav-link" href="todo.html">To-do list</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-header">
+      <div class="container">
+        <div class="editorial-meta">
+          <nav class="breadcrumb" aria-label="Fil d’Ariane">
+            <a href="index.html">Accueil</a>
+            <span aria-hidden="true">→</span>
+            <span>Sujet SAÉ 301-303</span>
+          </nav>
+          <span>Contact sujet : <a href="mailto:samir.boukhizou@univ-amu.fr">samir.boukhizou@univ-amu.fr</a></span>
+        </div>
+
+        <div class="page-header-split">
+          <div>
+            <h1>Sujet SAÉ 301-303 — Portail de covoiturage de l’IUT d’Arles</h1>
+            <p class="page-subtitle">
+              Concevoir et développer le portail de covoiturage de l’IUT d’Arles : un site où les conducteurs publient leurs trajets et où chaque étudiant trouve une place facilement, même s’il arrive en 1re année sans connaître personne.
+            </p>
+            <div class="btn-group">
+              <a class="btn btn-primary" href="#pdf-viewer">Lire le PDF intégré ↓</a>
+              <a class="btn btn-secondary" href="assets/SA%C3%89%20301-303%20-%20Portail%20de%20covoiturage%20de%20l%E2%80%99IUT%20d%E2%80%99Arles.pdf" target="_blank" rel="noopener">Ouvrir le PDF ↗</a>
+              <a class="btn btn-secondary" href="assets/SA%C3%89%20301-303%20-%20Portail%20de%20covoiturage%20de%20l%E2%80%99IUT%20d%E2%80%99Arles.pdf" download>Télécharger ↓</a>
+            </div>
+          </div>
+          <div class="cartouche-mini" aria-hidden="true">
+            <span class="c-top"></span>
+            <span class="c-main"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Chapitre 1 · Contexte, mission et profils</h2>
+          <span class="section-kicker">Pourquoi ce projet ?</span>
+        </div>
+
+        <div class="callout">
+          <strong>Problématique du sujet :</strong> Grèves, arrêts des transports en commun après les intempéries autour de Marseille : venir à l’IUT est devenu compliqué pour beaucoup d’étudiants. Les étudiants de 1re année, qui arrivent tout juste et ne connaissent encore personne, n’osent pas forcément se lancer. <em>Comment donner envie de covoiturer à quelqu’un qui ne connaît personne ?</em>
+        </div>
+
+        <div class="card-grid-2">
+          <article class="card">
+            <div>
+              <span class="badge">Sans compte</span>
+              <h3 style="margin-top: 0.75rem;">Le passager</h3>
+              <p>
+                Il cherche un trajet, consulte les annonces et contacte directement le conducteur pour s’organiser.
+              </p>
+            </div>
+            <p class="card-meta">Le compte n’est demandé qu’au moment de proposer un trajet.</p>
+          </article>
+
+          <article class="card card--blue">
+            <div>
+              <span class="badge">Avec compte</span>
+              <h3 style="margin-top: 0.75rem; color: #FFFFFF;">Le conducteur</h3>
+              <p>
+                Il crée un compte avec son adresse universitaire, publie ses trajets ponctuels ou réguliers et les gère.
+              </p>
+            </div>
+            <p class="card-meta">Accès réservé aux conducteurs via adresse universitaire.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-surface">
+      <div class="container">
+        <div class="section-header">
+          <h2>Chapitre 2 · Le portail attendu et ses limites</h2>
+          <span class="section-kicker">Périmètre fonctionnel exact</span>
+        </div>
+
+        <div class="card-grid-2">
+          <div class="card">
+            <div>
+              <h3>Ce que le portail doit permettre</h3>
+              <ul>
+                <li><strong>Chercher un trajet :</strong> départ, arrivée, date et heure, sans créer de compte.</li>
+                <li><strong>Voir une annonce :</strong> carte du parcours, horaires, places et conducteur.</li>
+                <li><strong>Joindre le conducteur :</strong> par téléphone ou e-mail, directement, sans réservation.</li>
+                <li><strong>Créer un compte :</strong> réservé aux conducteurs, avec l’adresse universitaire.</li>
+                <li><strong>Publier un trajet :</strong> ponctuel ou régulier, avec le nombre de places.</li>
+                <li><strong>Gérer ses annonces :</strong> modifier, marquer complet, suspendre ou supprimer.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card card--yellow">
+            <div>
+              <h3>Ce que le portail ne fait pas</h3>
+              <ul>
+                <li><strong>Pas de réservation :</strong> les étudiants se contactent directement.</li>
+                <li><strong>Pas de demandes de trajet :</strong> seuls les conducteurs publient.</li>
+                <li><strong>Pas d’étapes :</strong> un arrêt en chemin se négocie avec le conducteur.</li>
+                <li><strong>Pas d’avis ni de notes</strong> pour l’instant.</li>
+                <li><strong>Pas de paiement en ligne.</strong></li>
+                <li><strong>Pas de messagerie intégrée.</strong></li>
+              </ul>
+            </div>
+            <p style="font-weight: 500; margin-bottom: 0;">Un périmètre volontairement réduit, pour aller au bout du développement.</p>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem;">
+          <h3>Points d’intérêt (raccourcis en un clic)</h3>
+          <div class="poi-grid">
+            <div class="poi-item">
+              <strong>IUT</strong>
+              <span class="card-meta">Raccourci fréquent</span>
+            </div>
+            <div class="poi-item">
+              <strong>Gare</strong>
+              <span class="card-meta">Raccourci fréquent</span>
+            </div>
+            <div class="poi-item">
+              <strong>Centre-ville</strong>
+              <span class="card-meta">Raccourci fréquent</span>
+            </div>
+            <div class="poi-item">
+              <strong>Resto U</strong>
+              <span class="card-meta">Raccourci fréquent</span>
+            </div>
+          </div>
+          <p class="card-meta">
+            Et ailleurs ? Le départ et l’arrivée se saisissent aussi librement (Vitrolles, Salon-de-Provence, Tarascon…) : les points d’intérêt sont juste des raccourcis, pas une limite de l’application.
+          </p>
+        </div>
+
+        <div class="card" style="margin-top: 1.5rem;">
+          <div>
+            <h3>Les trajets réguliers (exemple : Vitrolles ⇄ IUT d’Arles)</h3>
+            <p>
+              Une seule annonce doit suffire pour toute la période. Le conducteur peut suspendre son trajet une semaine sans supprimer l’annonce.
+            </p>
+            <div class="days-row" aria-label="Jours actifs de l'exemple : Lundi, Mardi, Jeudi, Vendredi">
+              <span class="day-pill" title="Lundi actif">L</span>
+              <span class="day-pill" title="Mardi actif">M</span>
+              <span class="day-pill is-off" title="Mercredi inactif">M</span>
+              <span class="day-pill" title="Jeudi actif">J</span>
+              <span class="day-pill" title="Vendredi actif">V</span>
+            </div>
+            <div class="card-grid-2">
+              <div class="card card--muted">
+                <strong>Aller · 7:00</strong>
+                <span>Vitrolles → IUT d’Arles, pour arriver vers 8:00</span>
+              </div>
+              <div class="card card--muted">
+                <strong>Retour · 17:30</strong>
+                <span>IUT d’Arles → Vitrolles, après les cours</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Chapitre 3 · Les 7 écrans et le cadre du projet</h2>
+          <span class="section-kicker">Mobile d’abord · 7 écrans × 2 formats</span>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Écran</th>
+                <th>Son rôle</th>
+                <th>Compte requis</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. Accueil et recherche</strong></td>
+                <td>Trouver un trajet en quelques secondes</td>
+                <td>Non</td>
+              </tr>
+              <tr>
+                <td><strong>2. Résultats</strong></td>
+                <td>Comparer les trajets disponibles</td>
+                <td>Non</td>
+              </tr>
+              <tr>
+                <td><strong>3. Fiche trajet</strong></td>
+                <td>Carte, horaires, conducteur et contact</td>
+                <td>Non</td>
+              </tr>
+              <tr>
+                <td><strong>4. Connexion et inscription</strong></td>
+                <td>Donner accès aux conducteurs</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td><strong>5. Publier un trajet</strong></td>
+                <td>Trajet ponctuel ou régulier</td>
+                <td>Oui</td>
+              </tr>
+              <tr>
+                <td><strong>6. Mes annonces</strong></td>
+                <td>Modifier, marquer complet, supprimer</td>
+                <td>Oui</td>
+              </tr>
+              <tr>
+                <td><strong>7. Profil</strong></td>
+                <td>Informations et préférences du conducteur</td>
+                <td>Oui</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card-grid-2">
+          <div class="card">
+            <h3>Ce qui est imposé</h3>
+            <ul>
+              <li>Les 7 écrans</li>
+              <li>Les fonctionnalités</li>
+              <li>Les données, communes à tous</li>
+              <li>Les points d’intérêt</li>
+            </ul>
+          </div>
+          <div class="card card--muted">
+            <h3>Ce qui est libre</h3>
+            <ul>
+              <li>Le nom du site et son logo</li>
+              <li>Couleurs, typographies et icônes</li>
+              <li>La mise en page et les illustrations</li>
+              <li>Le ton des textes</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section-header" style="margin-top: 2.5rem;">
+          <h2>Points d’attention UX/UI &amp; déroulé de la SAÉ</h2>
+          <span class="section-kicker">Par groupes de 4 à 5 étudiants</span>
+        </div>
+
+        <div class="card-grid" style="margin-bottom: 1.5rem;">
+          <div class="card">
+            <h3>Confiance</h3>
+            <p>Profils, photos, préférences : rassurer avant de monter en voiture avec quelqu’un qu’on ne connaît pas.</p>
+          </div>
+          <div class="card">
+            <h3>Rapidité</h3>
+            <p>Trouver un trajet en quelques secondes, souvent depuis un téléphone et au dernier moment.</p>
+          </div>
+          <div class="card">
+            <h3>Accessibilité</h3>
+            <p>Contrastes, taille des boutons, et une carte toujours doublée d’un itinéraire en texte.</p>
+          </div>
+          <div class="card">
+            <h3>Vie privée</h3>
+            <p>Le conducteur choisit les coordonnées qu’il affiche : téléphone, e-mail ou les deux.</p>
+          </div>
+        </div>
+
+        <div class="card-grid-3">
+          <div class="card card--blue">
+            <span class="card-tag">Semaine 1</span>
+            <h3>Conception UX/UI</h3>
+            <p>Analyse des besoins, arborescence, wireframes puis maquette des 7 écrans. La maquette de la semaine 1 sert de base à tout le développement.</p>
+          </div>
+          <div class="card">
+            <span class="card-tag">Semaines 2-3 →</span>
+            <h3>Développement</h3>
+            <p>Base de données, pages dynamiques et carte interactive, à partir de votre maquette.</p>
+          </div>
+          <div class="card card--yellow">
+            <span class="card-tag">14/12/2026</span>
+            <h3>Soutenance</h3>
+            <p>Présentation de vos livrables devant le jury.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-surface" id="pdf-viewer">
+      <div class="container">
+        <div class="section-header">
+          <h2>Document PDF complet</h2>
+          <span class="section-kicker">SAÉ 301-303 - Portail de covoiturage de l’IUT d’Arles.pdf</span>
+        </div>
+
+        <div class="pdf-toolbar">
+          <strong>Visionneuse intégrée (18 diapositives)</strong>
+          <div class="btn-group">
+            <a class="btn btn-primary" href="assets/SA%C3%89%20301-303%20-%20Portail%20de%20covoiturage%20de%20l%E2%80%99IUT%20d%E2%80%99Arles.pdf" target="_blank" rel="noopener">Ouvrir dans un nouvel onglet ↗</a>
+            <a class="btn btn-secondary" href="assets/SA%C3%89%20301-303%20-%20Portail%20de%20covoiturage%20de%20l%E2%80%99IUT%20d%E2%80%99Arles.pdf" download>Télécharger le PDF ↓</a>
+          </div>
+        </div>
+        <div class="pdf-frame-wrap">
+          <iframe
+            class="pdf-frame"
+            src="assets/SA%C3%89%20301-303%20-%20Portail%20de%20covoiturage%20de%20l%E2%80%99IUT%20d%E2%80%99Arles.pdf"
+            title="Sujet SAÉ 301-303 - Portail de covoiturage de l'IUT d'Arles (PDF)"
+            loading="lazy"
+          ></iframe>
+        </div>
+        <div class="pdf-mobile-note">
+          Sur certains navigateurs mobiles, l’aperçu PDF intégré ne s’affiche pas directement : utilisez le bouton « Ouvrir dans un nouvel onglet ↗ » ou « Télécharger le PDF ↓ » ci-dessus.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <svg class="brand-logo-svg" viewBox="0 0 180 62" role="img" aria-label="Logotype amU Aix Marseille Université" style="color: #FFFFFF; margin-bottom: 0.9rem;">
+            <text x="2" y="40" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="500" letter-spacing="-2" fill="currentColor">amU</text>
+            <text x="2" y="56" font-family="Inter, Arial, sans-serif" font-size="11.5" font-weight="400" fill="currentColor">Aix</text>
+            <text x="41" y="56" font-family="Inter, Arial, sans-serif" font-size="11.5" font-weight="400" fill="currentColor">Marseille</text>
+            <text x="108" y="56" font-family="Inter, Arial, sans-serif" font-size="11.5" font-weight="400" fill="currentColor">Université</text>
+          </svg>
+          <p style="font-size: 0.92rem; color: #CCCCCC;">
+            Portail de ressources pédagogiques pour la SAÉ 301 / 303 (BUT MMI2 — IUT d’Arles), conforme à la charte graphique Aix Marseille Université (amU).
+          </p>
+        </div>
+
+        <div>
+          <h3 style="color: #FFFFFF;">Pages</h3>
+          <ul class="footer-list">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="sujet.html">Sujet SAÉ 301-303</a></li>
+            <li><a href="fiche-de-route.html">Fiche de route Design d’expérience</a></li>
+            <li><a href="charte-amu.html">Charte graphique amU</a></li>
+            <li><a href="todo.html">To-do list &amp; sauvegarde JSON</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 style="color: #FFFFFF;">Contacts &amp; dépôt</h3>
+          <ul class="footer-list">
+            <li>Enseignant SAÉ : <a href="mailto:samir.boukhizou@univ-amu.fr">samir.boukhizou@univ-amu.fr</a></li>
+            <li>Charte amU : <a href="mailto:dircom-contact@univ-amu.fr">dircom-contact@univ-amu.fr</a></li>
+            <li>Dépôt des livrables : Ametice (avant le 27/11/2026 à 18 h)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>Aix Marseille Université (amU) · IUT d’Arles · SAÉ 301 / 303</span>
+        <span>Site statique compatible GitHub Pages</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1279 @@
+/* ==========================================================================
+   Portail documentaire SAÉ 301 / 303 — Charte graphique amU (2024)
+   Règles strictes :
+   - Bleu #1F63DE associé au Blanc #FFFFFF (jamais avec le jaune)
+   - Jaune #FFFF85 associé au Noir #000000 (jamais avec le bleu)
+   - Aucune capitalisation forcée (pas de mise en majuscules automatique)
+   - Textes systématiquement ferrés à gauche
+   - Système de formes : rectangles assemblés en cartouche (0px de rayon)
+   ========================================================================== */
+
+:root {
+  /* Gamme principale amU */
+  --amu-blue: #1F63DE;
+  --amu-blue-dark: #164BB0;
+  --amu-yellow: #FFFF85;
+  --amu-white: #FFFFFF;
+  --amu-black: #000000;
+
+  /* Surfaces et neutres */
+  --amu-surface: #F6F6F6;
+  --amu-surface-alt: #EFEFEF;
+  --amu-border: #D9D9D9;
+  --amu-text-muted: #4A4A4A;
+
+  /* Gamme secondaire (secteurs) */
+  --amu-gold: #FED100;
+  --amu-coral: #FF8B7C;
+  --amu-orange: #FF7900;
+  --amu-cyan: #33CCFF;
+  --amu-green: #53DE94;
+  --amu-purple: #9966FF;
+
+  /* Gamme tertiaire (états & accents) */
+  --amu-emerald: #009A74;
+  --amu-wine: #990000;
+  --amu-sky: #CDEAFC;
+  --amu-green-light: #CAFEE4;
+  --amu-coral-light: #FFD4CC;
+
+  /* Typographie */
+  --font-sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --container-max: 1180px;
+  --gutter: 1.5rem;
+}
+
+/* Reset & base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--amu-black);
+  background-color: var(--amu-white);
+  text-align: left;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--amu-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--amu-blue-dark);
+}
+
+:focus-visible {
+  outline: 3px solid var(--amu-black);
+  outline-offset: 2px;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--amu-black);
+  color: var(--amu-white);
+  padding: 0.75rem 1.25rem;
+  z-index: 1000;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+/* Typographie — 3 corps principaux, ferrés à gauche, sans tout-capitales */
+h1, h2, h3, h4 {
+  margin-top: 0;
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+
+h1 {
+  font-size: clamp(1.85rem, 3.8vw, 2.75rem);
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+  margin-bottom: 0.85rem;
+}
+
+h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+ul, ol {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-left: 1.35rem;
+}
+
+li {
+  margin-bottom: 0.4rem;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  background: var(--amu-surface);
+  border: 1px solid var(--amu-border);
+  padding: 0.1em 0.35em;
+}
+
+/* ==========================================================================
+   En-tête & navigation (filet éditorial 1px noir en haut façon charte PDF)
+   ========================================================================== */
+.site-header {
+  background-color: var(--amu-white);
+  border-bottom: 1px solid var(--amu-black);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-topbar {
+  border-bottom: 1px solid var(--amu-border);
+  background-color: var(--amu-surface);
+  font-size: 0.82rem;
+  color: var(--amu-text-muted);
+}
+
+.header-topbar-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  padding-top: 0.45rem;
+  padding-bottom: 0.45rem;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 72px;
+}
+
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  text-decoration: none;
+  color: var(--amu-black);
+  min-height: 44px;
+  padding: 0.25rem 0;
+  flex-shrink: 0;
+}
+
+.brand-link:hover {
+  color: var(--amu-blue);
+}
+
+.brand-logo-svg {
+  width: 96px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.brand-divider {
+  width: 1px;
+  height: 34px;
+  background-color: var(--amu-black);
+}
+
+.brand-title {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.92rem;
+  line-height: 1.25;
+}
+
+.brand-title strong {
+  font-weight: 700;
+}
+
+.brand-title span {
+  color: var(--amu-text-muted);
+  font-size: 0.82rem;
+}
+
+/* Navigation */
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.5rem 0.9rem;
+  background-color: var(--amu-white);
+  color: var(--amu-black);
+  border: 1px solid var(--amu-black);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.nav-toggle:hover {
+  background-color: var(--amu-surface);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.5rem 0.85rem;
+  text-decoration: none;
+  color: var(--amu-black);
+  font-weight: 500;
+  font-size: 0.95rem;
+  border-bottom: 3px solid transparent;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.nav-link:hover {
+  background-color: var(--amu-surface);
+  color: var(--amu-blue);
+}
+
+.nav-link[aria-current="page"] {
+  background-color: var(--amu-blue);
+  color: var(--amu-white);
+}
+
+/* ==========================================================================
+   Boutons (conformes aux exigences accessibilité >= 44px & contraste amU)
+   ========================================================================== */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 44px;
+  padding: 0.65rem 1.2rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background-color: var(--amu-blue);
+  color: var(--amu-white);
+  border-color: var(--amu-blue);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--amu-blue-dark);
+  border-color: var(--amu-blue-dark);
+  color: var(--amu-white);
+}
+
+.btn-secondary {
+  background-color: var(--amu-white);
+  color: var(--amu-black);
+  border-color: var(--amu-black);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: var(--amu-black);
+  color: var(--amu-white);
+}
+
+.btn-yellow {
+  background-color: var(--amu-yellow);
+  color: var(--amu-black);
+  border-color: var(--amu-black);
+}
+
+.btn-yellow:hover:not(:disabled) {
+  background-color: var(--amu-black);
+  color: var(--amu-yellow);
+}
+
+.btn-white-on-blue {
+  background-color: var(--amu-white);
+  color: var(--amu-blue);
+  border-color: var(--amu-white);
+}
+
+.btn-white-on-blue:hover:not(:disabled) {
+  background-color: var(--amu-sky);
+  color: var(--amu-black);
+}
+
+.btn-outline-white {
+  background-color: transparent;
+  color: var(--amu-white);
+  border-color: var(--amu-white);
+}
+
+.btn-outline-white:hover:not(:disabled) {
+  background-color: var(--amu-white);
+  color: var(--amu-blue);
+}
+
+.btn-danger {
+  background-color: var(--amu-white);
+  color: var(--amu-wine);
+  border-color: var(--amu-wine);
+}
+
+.btn-danger:hover:not(:disabled) {
+  background-color: var(--amu-wine);
+  color: var(--amu-white);
+}
+
+/* ==========================================================================
+   Cartouche amU (Formes : rectangle horizontal + vertical assemblés)
+   ========================================================================== */
+.hero-section {
+  padding-top: 2.5rem;
+  padding-bottom: 2rem;
+}
+
+.amu-cartouche-hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: var(--amu-white);
+}
+
+.cartouche-block {
+  position: relative;
+  background-color: var(--amu-blue);
+  color: var(--amu-white);
+  padding: 2.25rem 2rem;
+}
+
+.cartouche-block a {
+  color: var(--amu-white);
+}
+
+.cartouche-step-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.cartouche-tab {
+  background-color: var(--amu-blue);
+  color: var(--amu-white);
+  padding: 0.6rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.cartouche-corner-spacer {
+  height: 20px;
+  flex: 1;
+  background-color: var(--amu-white);
+}
+
+.cartouche-lead {
+  font-size: 1.1rem;
+  max-width: 68ch;
+  margin-bottom: 1.5rem;
+}
+
+/* Bandeau d'alerte / échéances : Jaune #FFFF85 + Noir #000000 uniquement */
+.yellow-band {
+  background-color: var(--amu-yellow);
+  color: var(--amu-black);
+  border-top: 1px solid var(--amu-black);
+  border-bottom: 1px solid var(--amu-black);
+  padding: 1.35rem 0;
+}
+
+.yellow-band-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.yellow-band-item strong {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.yellow-band a {
+  color: var(--amu-black);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   En-tête de page intérieure & fil d'Ariane éditorial
+   ========================================================================== */
+.page-header {
+  padding-top: 1.5rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--amu-black);
+  background-color: var(--amu-white);
+}
+
+.editorial-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--amu-black);
+  font-size: 0.88rem;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--amu-text-muted);
+}
+
+.breadcrumb a {
+  color: var(--amu-black);
+}
+
+.page-header-split {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.page-subtitle {
+  font-size: 1.08rem;
+  color: var(--amu-text-muted);
+  max-width: 70ch;
+  margin-bottom: 1.25rem;
+}
+
+/* Petit motif cartouche décoratif */
+.cartouche-mini {
+  width: 112px;
+  height: 76px;
+  display: grid;
+  grid-template-columns: 1fr 38px;
+  grid-template-rows: 22px 1fr;
+  flex-shrink: 0;
+}
+
+.cartouche-mini .c-main {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  background-color: var(--amu-blue);
+}
+
+.cartouche-mini .c-top {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  background-color: var(--amu-blue);
+}
+
+.cartouche-mini--yellow .c-main,
+.cartouche-mini--yellow .c-top {
+  background-color: var(--amu-yellow);
+  border: 1px solid var(--amu-black);
+}
+
+.cartouche-mini--yellow .c-main {
+  border-top: none;
+}
+
+/* ==========================================================================
+   Sections & grilles de cartes
+   ========================================================================== */
+.section {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.section-surface {
+  background-color: var(--amu-surface);
+  border-top: 1px solid var(--amu-border);
+  border-bottom: 1px solid var(--amu-border);
+}
+
+.section-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem 1.5rem;
+  border-bottom: 1px solid var(--amu-black);
+  padding-bottom: 0.65rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+  margin-bottom: 0;
+}
+
+.section-kicker {
+  font-size: 0.9rem;
+  color: var(--amu-text-muted);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.card-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.card-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  background-color: var(--amu-white);
+  border: 1px solid var(--amu-black);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.card--muted {
+  background-color: var(--amu-surface);
+  border-color: var(--amu-border);
+}
+
+.card--blue {
+  background-color: var(--amu-blue);
+  color: var(--amu-white);
+  border-color: var(--amu-blue);
+}
+
+.card--blue a {
+  color: var(--amu-white);
+}
+
+.card--yellow {
+  background-color: var(--amu-yellow);
+  color: var(--amu-black);
+  border-color: var(--amu-black);
+}
+
+.card-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--amu-black);
+  background-color: var(--amu-surface);
+  color: var(--amu-black);
+  margin-bottom: 0.65rem;
+}
+
+.card--blue .card-tag {
+  background-color: var(--amu-white);
+  color: var(--amu-blue);
+  border-color: var(--amu-white);
+}
+
+.card--yellow .card-tag {
+  background-color: var(--amu-black);
+  color: var(--amu-yellow);
+}
+
+.card-meta {
+  font-size: 0.88rem;
+  color: var(--amu-text-muted);
+}
+
+.card--blue .card-meta {
+  color: var(--amu-sky);
+}
+
+.card-link {
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 44px;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+/* Badges & pilules */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  border: 1px solid var(--amu-black);
+  background-color: var(--amu-white);
+  color: var(--amu-black);
+}
+
+.badge-blue {
+  background-color: var(--amu-blue);
+  color: var(--amu-white);
+  border-color: var(--amu-blue);
+}
+
+.badge-yellow {
+  background-color: var(--amu-yellow);
+  color: var(--amu-black);
+  border-color: var(--amu-black);
+}
+
+.badge-green {
+  background-color: var(--amu-green-light);
+  color: var(--amu-black);
+  border-color: var(--amu-emerald);
+}
+
+/* ==========================================================================
+   Tableaux responsives
+   ========================================================================== */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--amu-black);
+  background-color: var(--amu-white);
+  margin-bottom: 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 560px;
+}
+
+th, td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--amu-border);
+  vertical-align: top;
+}
+
+thead th {
+  background-color: var(--amu-black);
+  color: var(--amu-white);
+  font-weight: 500;
+  border-bottom: 1px solid var(--amu-black);
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--amu-surface);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ==========================================================================
+   Encadrés & points d'intérêt
+   ========================================================================== */
+.callout {
+  border-left: 4px solid var(--amu-blue);
+  background-color: var(--amu-surface);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.callout--yellow {
+  border-left: 4px solid var(--amu-black);
+  background-color: var(--amu-yellow);
+  color: var(--amu-black);
+}
+
+.poi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.poi-item {
+  border: 1px solid var(--amu-black);
+  background-color: var(--amu-white);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.poi-item strong {
+  font-size: 1.05rem;
+}
+
+.days-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.75rem 0 1rem;
+}
+
+.day-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  font-weight: 700;
+  border: 1px solid var(--amu-black);
+  background-color: var(--amu-black);
+  color: var(--amu-white);
+}
+
+.day-pill.is-off {
+  background-color: var(--amu-white);
+  color: var(--amu-text-muted);
+  border-color: var(--amu-border);
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   Visionneuse PDF intégrée
+   ========================================================================== */
+.pdf-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--amu-surface);
+  border: 1px solid var(--amu-black);
+  border-bottom: none;
+  padding: 1rem 1.25rem;
+}
+
+.pdf-frame-wrap {
+  border: 1px solid var(--amu-black);
+  background-color: var(--amu-surface-alt);
+}
+
+.pdf-frame {
+  display: block;
+  width: 100%;
+  height: min(75vh, 820px);
+  border: none;
+}
+
+.pdf-mobile-note {
+  display: none;
+  padding: 0.85rem 1.25rem;
+  background-color: var(--amu-yellow);
+  color: var(--amu-black);
+  border: 1px solid var(--amu-black);
+  border-top: none;
+  font-size: 0.92rem;
+}
+
+/* ==========================================================================
+   Charte amU : nuancier interactif & règles visuelles
+   ========================================================================== */
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.25rem;
+}
+
+.swatch-card {
+  border: 1px solid var(--amu-black);
+  background-color: var(--amu-white);
+  display: flex;
+  flex-direction: column;
+}
+
+.swatch-color {
+  height: 110px;
+  border-bottom: 1px solid var(--amu-black);
+  position: relative;
+}
+
+.swatch-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.swatch-copy-btn {
+  margin-top: 0.4rem;
+  align-self: flex-start;
+  min-height: 44px;
+  padding: 0.45rem 0.9rem;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  background-color: var(--amu-white);
+  color: var(--amu-black);
+  border: 1px solid var(--amu-black);
+  cursor: pointer;
+}
+
+.swatch-copy-btn:hover {
+  background-color: var(--amu-blue);
+  color: var(--amu-white);
+  border-color: var(--amu-blue);
+}
+
+.type-specimen {
+  border: 1px solid var(--amu-black);
+  padding: 1.5rem;
+  background-color: var(--amu-white);
+}
+
+.type-level {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--amu-border);
+}
+
+.type-level:last-child {
+  border-bottom: none;
+}
+
+/* ==========================================================================
+   Page To-do list interactive
+   ========================================================================== */
+.todo-dashboard {
+  border: 1px solid var(--amu-black);
+  background-color: var(--amu-surface);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.todo-dashboard-top {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.25rem;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.progress-track {
+  width: 100%;
+  height: 18px;
+  background-color: var(--amu-white);
+  border: 1px solid var(--amu-black);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background-color: var(--amu-blue);
+  transition: width 0.25s ease;
+}
+
+.todo-stats {
+  font-size: 1.15rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.todo-controls {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: end;
+  padding-top: 1rem;
+  border-top: 1px solid var(--amu-border);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-field label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.input-text,
+.input-select {
+  min-height: 44px;
+  padding: 0.55rem 0.8rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  border: 1px solid var(--amu-black);
+  border-radius: 0;
+  background-color: var(--amu-white);
+  color: var(--amu-black);
+}
+
+.todo-filters-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter-btn {
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 500;
+  border: 1px solid var(--amu-black);
+  background-color: var(--amu-white);
+  color: var(--amu-black);
+  cursor: pointer;
+}
+
+.filter-btn[aria-pressed="true"] {
+  background-color: var(--amu-blue);
+  color: var(--amu-white);
+  border-color: var(--amu-blue);
+}
+
+.status-banner {
+  padding: 0.85rem 1.15rem;
+  border: 1px solid var(--amu-black);
+  background-color: var(--amu-yellow);
+  color: var(--amu-black);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.status-banner.is-error {
+  background-color: var(--amu-coral-light);
+  border-color: var(--amu-wine);
+  color: var(--amu-wine);
+}
+
+.status-banner[hidden] {
+  display: none;
+}
+
+.todo-section {
+  border: 1px solid var(--amu-black);
+  background-color: var(--amu-white);
+  margin-bottom: 1.5rem;
+}
+
+.todo-section-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background-color: var(--amu-surface);
+  border-bottom: 1px solid var(--amu-black);
+}
+
+.todo-section-header h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+.todo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--amu-border);
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.todo-item.is-done {
+  background-color: #FAFAFA;
+}
+
+.todo-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  cursor: pointer;
+  flex: 1;
+  min-height: 28px;
+}
+
+.todo-checkbox {
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  accent-color: var(--amu-blue);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.todo-text-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.todo-item.is-done .todo-title {
+  text-decoration: line-through;
+  color: var(--amu-text-muted);
+}
+
+.todo-note {
+  font-size: 0.86rem;
+  color: var(--amu-text-muted);
+}
+
+.todo-delete-btn {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--amu-border);
+  background-color: var(--amu-white);
+  color: var(--amu-wine);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.todo-delete-btn:hover {
+  background-color: var(--amu-wine);
+  color: var(--amu-white);
+  border-color: var(--amu-wine);
+}
+
+.add-task-form {
+  display: grid;
+  grid-template-columns: 1fr 220px auto;
+  gap: 0.75rem;
+  align-items: end;
+  padding: 1.25rem;
+  border: 1px solid var(--amu-black);
+  background-color: var(--amu-surface);
+  margin-top: 2rem;
+}
+
+/* ==========================================================================
+   Pied de page
+   ========================================================================== */
+.site-footer {
+  background-color: var(--amu-black);
+  color: var(--amu-white);
+  padding: 2.5rem 0 2rem;
+  margin-top: 3rem;
+}
+
+.site-footer a {
+  color: var(--amu-white);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid #333333;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-list li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-bottom {
+  padding-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  font-size: 0.88rem;
+  color: #CCCCCC;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 900px) {
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--amu-white);
+    border-bottom: 2px solid var(--amu-black);
+    padding: 0.75rem var(--gutter) 1.25rem;
+  }
+
+  .site-nav.is-open {
+    display: block;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.35rem;
+  }
+
+  .nav-link {
+    width: 100%;
+    border-bottom: none;
+    border-left: 4px solid transparent;
+  }
+
+  .nav-link[aria-current="page"] {
+    border-left-color: var(--amu-black);
+  }
+
+  .todo-dashboard-top,
+  .todo-controls,
+  .add-task-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --gutter: 1rem;
+  }
+
+  .page-header-split {
+    grid-template-columns: 1fr;
+  }
+
+  .cartouche-mini {
+    display: none;
+  }
+
+  .cartouche-block {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .brand-divider,
+  .brand-title span {
+    display: none;
+  }
+
+  .pdf-frame {
+    height: 460px;
+  }
+
+  .pdf-mobile-note {
+    display: block;
+  }
+}

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-do list · Documentation SAÉ 301 / 303 — IUT d’Arles</title>
+  <meta name="description" content="To-do list interactive de la feuille de route Design d’expérience (SAÉ 301 / 303) avec sauvegarde automatique locale, exportation et importation JSON.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
+  <header class="site-header">
+    <div class="header-topbar">
+      <div class="container header-topbar-inner">
+        <span>Aix Marseille Université (amU) · IUT d’Arles — BUT MMI2</span>
+        <span>SAÉ 301 / 303 · Portail de covoiturage</span>
+      </div>
+    </div>
+    <div class="container header-inner">
+      <a class="brand-link" href="index.html" aria-label="Accueil du portail documentaire SAÉ 301-303">
+        <svg class="brand-logo-svg" viewBox="0 0 180 62" role="img" aria-label="Logotype amU Aix Marseille Université">
+          <text x="2" y="40" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="500" letter-spacing="-2" fill="currentColor">amU</text>
+          <text x="2" y="56" font-family="Inter, Arial, sans-serif" font-size="11.5" font-weight="400" fill="currentColor">Aix</text>
+          <text x="41" y="56" font-family="Inter, Arial, sans-serif" font-size="11.5" font-weight="400" fill="currentColor">Marseille</text>
+          <text x="108" y="56" font-family="Inter, Arial, sans-serif" font-size="11.5" font-weight="400" fill="currentColor">Université</text>
+        </svg>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-title">
+          <strong>Documentation SAÉ 301 / 303</strong>
+          <span>Design d’expérience &amp; intégration</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
+        Menu ☰
+      </button>
+
+      <nav class="site-nav" id="site-nav" data-site-nav aria-label="Navigation principale">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="index.html">Accueil</a></li>
+          <li><a class="nav-link" href="sujet.html">Sujet SAÉ</a></li>
+          <li><a class="nav-link" href="fiche-de-route.html">Fiche de route</a></li>
+          <li><a class="nav-link" href="charte-amu.html">Charte amU</a></li>
+          <li><a class="nav-link" href="todo.html" aria-current="page">To-do list</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-header">
+      <div class="container">
+        <div class="editorial-meta">
+          <nav class="breadcrumb" aria-label="Fil d’Ariane">
+            <a href="index.html">Accueil</a>
+            <span aria-hidden="true">→</span>
+            <a href="fiche-de-route.html">Fiche de route</a>
+            <span aria-hidden="true">→</span>
+            <span>To-do list interactive</span>
+          </nav>
+          <span>Sauvegarde locale + export / import JSON</span>
+        </div>
+
+        <div class="page-header-split">
+          <div>
+            <h1>To-do list de la feuille de route</h1>
+            <p class="page-subtitle">
+              Suivez toutes les étapes et vérifications de la fiche de route Design d’expérience. Votre progression est enregistrée automatiquement dans ce navigateur, et vous pouvez l’exporter ou l’importer via un fichier <code>.json</code> pour la partager avec votre groupe.
+            </p>
+          </div>
+          <div class="cartouche-mini" aria-hidden="true">
+            <span class="c-top"></span>
+            <span class="c-main"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="todo-dashboard">
+          <div class="todo-dashboard-top">
+            <div>
+              <h2 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Progression globale</h2>
+              <div class="progress-track" aria-hidden="true">
+                <div class="progress-fill" id="todo-progress-fill"></div>
+              </div>
+            </div>
+            <div class="todo-stats" id="todo-progress-text" aria-live="polite">0 / 39 terminées (0 %)</div>
+          </div>
+
+          <div class="todo-controls">
+            <div class="form-field">
+              <label for="todo-group-name">Nom du dossier / membres du groupe (inclus dans l’export JSON)</label>
+              <input
+                class="input-text"
+                id="todo-group-name"
+                type="text"
+                placeholder="Ex. DX-Dupont-Martin-Bernard-Petit"
+              >
+            </div>
+
+            <div class="btn-group">
+              <button class="btn btn-primary" type="button" id="todo-export-btn">Exporter JSON ↓</button>
+              <button class="btn btn-yellow" type="button" id="todo-import-btn">Importer JSON ↑</button>
+              <input type="file" id="todo-import-input" accept=".json,application/json" hidden>
+              <button class="btn btn-danger" type="button" id="todo-reset-btn">Réinitialiser</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="status-banner" id="todo-status-banner" role="status" aria-live="polite" hidden></div>
+
+        <div class="todo-filters-bar">
+          <div class="filter-tabs" role="group" aria-label="Filtrer les tâches">
+            <button class="filter-btn" type="button" data-todo-filter="all" aria-pressed="true">Toutes</button>
+            <button class="filter-btn" type="button" data-todo-filter="pending" aria-pressed="false">À faire</button>
+            <button class="filter-btn" type="button" data-todo-filter="done" aria-pressed="false">Terminées</button>
+          </div>
+          <a class="btn btn-secondary" href="fiche-de-route.html">Relire la fiche de route →</a>
+        </div>
+
+        <div id="todo-sections-root"></div>
+
+        <form class="add-task-form" id="todo-add-form">
+          <div class="form-field">
+            <label for="custom-task-title">Ajouter une tâche personnalisée pour votre groupe</label>
+            <input
+              class="input-text"
+              id="custom-task-title"
+              type="text"
+              required
+              placeholder="Ex. Relire les 2 personas avant l’export PDF"
+            >
+          </div>
+          <div class="form-field">
+            <label for="custom-task-section">Catégorie</label>
+            <select class="input-select" id="custom-task-section">
+              <option value="planning">Planning de la semaine</option>
+              <option value="livrable-1">Livrable 1 · Personas</option>
+              <option value="livrable-2">Livrable 2 · Charte &amp; logo</option>
+              <option value="livrable-3">Livrable 3 · Maquette Figma</option>
+              <option value="rendu-final">Checklist rendu final</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" type="submit">Ajouter +</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <svg class="brand-logo-svg" viewBox="0 0 180 62" role="img" aria-label="Logotype amU Aix Marseille Université" style="color: #FFFFFF; margin-bottom: 0.9rem;">
+            <text x="2" y="40" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="500" letter-spacing="-2" fill="currentColor">amU</text>
+            <text x="2" y="56" font-family="Inter, Arial, sans-serif" font-size="11.5" font-weight="400" fill="currentColor">Aix</text>
+            <text x="41" y="56" font-family="Inter, Arial, sans-serif" font-size="11.5" font-weight="400" fill="currentColor">Marseille</text>
+            <text x="108" y="56" font-family="Inter, Arial, sans-serif" font-size="11.5" font-weight="400" fill="currentColor">Université</text>
+          </svg>
+          <p style="font-size: 0.92rem; color: #CCCCCC;">
+            Portail de ressources pédagogiques pour la SAÉ 301 / 303 (BUT MMI2 — IUT d’Arles), conforme à la charte graphique Aix Marseille Université (amU).
+          </p>
+        </div>
+
+        <div>
+          <h3 style="color: #FFFFFF;">Pages</h3>
+          <ul class="footer-list">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="sujet.html">Sujet SAÉ 301-303</a></li>
+            <li><a href="fiche-de-route.html">Fiche de route Design d’expérience</a></li>
+            <li><a href="charte-amu.html">Charte graphique amU</a></li>
+            <li><a href="todo.html">To-do list &amp; sauvegarde JSON</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 style="color: #FFFFFF;">Contacts &amp; dépôt</h3>
+          <ul class="footer-list">
+            <li>Enseignant SAÉ : <a href="mailto:samir.boukhizou@univ-amu.fr">samir.boukhizou@univ-amu.fr</a></li>
+            <li>Charte amU : <a href="mailto:dircom-contact@univ-amu.fr">dircom-contact@univ-amu.fr</a></li>
+            <li>Dépôt des livrables : Ametice (avant le 27/11/2026 à 18 h)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>Aix Marseille Université (amU) · IUT d’Arles · SAÉ 301 / 303</span>
+        <span>Site statique compatible GitHub Pages</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/todo.js"></script>
+</body>
+</html>
