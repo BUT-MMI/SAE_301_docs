@@ -376,13 +376,13 @@ code {
   color: var(--amu-yellow);
 }
 
-.btn-white-on-blue {
+.btn.btn-white-on-blue {
   background-color: var(--amu-white);
   color: var(--amu-blue);
   border-color: var(--amu-white);
 }
 
-.btn-white-on-blue:hover:not(:disabled) {
+.btn.btn-white-on-blue:hover:not(:disabled) {
   background-color: var(--amu-sky);
   color: var(--amu-black);
 }
@@ -430,7 +430,7 @@ code {
   padding: 2.25rem 2rem;
 }
 
-.cartouche-block a {
+.cartouche-block a:not(.btn) {
   color: var(--amu-white);
 }
 
@@ -483,7 +483,7 @@ code {
   margin-bottom: 0.2rem;
 }
 
-.yellow-band a {
+.yellow-band a:not(.btn) {
   color: var(--amu-black);
   font-weight: 500;
 }
@@ -641,7 +641,7 @@ code {
   border-color: var(--amu-blue);
 }
 
-.card--blue a {
+.card--blue a:not(.btn) {
   color: var(--amu-white);
 }
 
