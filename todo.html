@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>To-do list · Documentation SAÉ 301 / 303 — IUT d’Arles</title>
-  <meta name="description" content="To-do list interactive de la feuille de route Design d’expérience (SAÉ 301 / 303) avec sauvegarde automatique locale, exportation et importation JSON.">
+  <meta name="description"
+    content="To-do list interactive de la feuille de route Design d’expérience (SAÉ 301 / 303) avec sauvegarde automatique locale, exportation et importation JSON.">
   <link rel="stylesheet" href="css/style.css?v=5">
 </head>
+
 <body>
   <a class="skip-link" href="#main-content">Aller au contenu principal</a>
 
@@ -20,14 +23,18 @@
     <div class="container header-inner">
       <a class="brand-link" href="index.html" aria-label="Accueil du portail documentaire SAÉ 301-303">
         <svg class="brand-logo-svg" viewBox="0 0 138 66" role="img" aria-label="Logotype amU Aix Marseille Université">
-          <text x="0" y="48" font-family="'Monument Grotesk', Arial, sans-serif" font-size="64" font-weight="400" fill="currentColor">amU</text>
-          <text x="2" y="62" font-family="'Monument Grotesk', Arial, sans-serif" font-size="10" font-weight="400" fill="currentColor">Aix</text>
-          <text x="35" y="62" font-family="'Monument Grotesk', Arial, sans-serif" font-size="10" font-weight="400" fill="currentColor">Marseille</text>
-          <text x="90" y="62" font-family="'Monument Grotesk', Arial, sans-serif" font-size="10" font-weight="400" fill="currentColor">Université</text>
+          <text x="0" y="48" font-family="'Monument Grotesk', Arial, sans-serif" font-size="64" font-weight="400"
+            fill="currentColor">amU</text>
+          <text x="2" y="62" font-family="'Monument Grotesk', Arial, sans-serif" font-size="10" font-weight="400"
+            fill="currentColor">Aix</text>
+          <text x="35" y="62" font-family="'Monument Grotesk', Arial, sans-serif" font-size="10" font-weight="400"
+            fill="currentColor">Marseille</text>
+          <text x="90" y="62" font-family="'Monument Grotesk', Arial, sans-serif" font-size="10" font-weight="400"
+            fill="currentColor">Université</text>
         </svg>
         <span class="brand-divider" aria-hidden="true"></span>
         <span class="brand-title">
-          <strong>Documentation SAÉ 301 / 303</strong>
+          <strong>Docs SAÉ 301 / 303</strong>
           <span>Design d’expérience &amp; intégration</span>
         </span>
       </a>
@@ -66,7 +73,9 @@
           <div>
             <h1>To-do list de la feuille de route</h1>
             <p class="page-subtitle">
-              Suivez toutes les étapes et vérifications de la fiche de route Design d’expérience. Votre progression est enregistrée automatiquement dans ce navigateur, et vous pouvez l’exporter ou l’importer via un fichier <code>.json</code> pour la partager avec votre groupe.
+              Suivez toutes les étapes et vérifications de la fiche de route Design d’expérience. Votre progression est
+              enregistrée automatiquement dans ce navigateur, et vous pouvez l’exporter ou l’importer via un fichier
+              <code>.json</code> pour la partager avec votre groupe.
             </p>
           </div>
           <div class="cartouche-mini" aria-hidden="true">
@@ -93,12 +102,8 @@
           <div class="todo-controls">
             <div class="form-field">
               <label for="todo-group-name">Nom du dossier / membres du groupe (inclus dans l’export JSON)</label>
-              <input
-                class="input-text"
-                id="todo-group-name"
-                type="text"
-                placeholder="Ex. DX-Dupont-Martin-Bernard-Petit"
-              >
+              <input class="input-text" id="todo-group-name" type="text"
+                placeholder="Ex. DX-Dupont-Martin-Bernard-Petit">
             </div>
 
             <div class="btn-group">
@@ -126,13 +131,8 @@
         <form class="add-task-form" id="todo-add-form">
           <div class="form-field">
             <label for="custom-task-title">Ajouter une tâche personnalisée pour votre groupe</label>
-            <input
-              class="input-text"
-              id="custom-task-title"
-              type="text"
-              required
-              placeholder="Ex. Relire les 2 personas avant l’export PDF"
-            >
+            <input class="input-text" id="custom-task-title" type="text" required
+              placeholder="Ex. Relire les 2 personas avant l’export PDF">
           </div>
           <div class="form-field">
             <label for="custom-task-section">Catégorie</label>
@@ -154,14 +154,20 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <svg class="brand-logo-svg" viewBox="0 0 138 66" role="img" aria-label="Logotype amU Aix Marseille Université" style="color: #FFFFFF; margin-bottom: 0.9rem;">
-            <text x="0" y="48" font-family="'Monument Grotesk', Arial, sans-serif" font-size="64" font-weight="400" fill="currentColor">amU</text>
-            <text x="2" y="62" font-family="'Monument Grotesk', Arial, sans-serif" font-size="10" font-weight="400" fill="currentColor">Aix</text>
-            <text x="35" y="62" font-family="'Monument Grotesk', Arial, sans-serif" font-size="10" font-weight="400" fill="currentColor">Marseille</text>
-            <text x="90" y="62" font-family="'Monument Grotesk', Arial, sans-serif" font-size="10" font-weight="400" fill="currentColor">Université</text>
+          <svg class="brand-logo-svg" viewBox="0 0 138 66" role="img" aria-label="Logotype amU Aix Marseille Université"
+            style="color: #FFFFFF; margin-bottom: 0.9rem;">
+            <text x="0" y="48" font-family="'Monument Grotesk', Arial, sans-serif" font-size="64" font-weight="400"
+              fill="currentColor">amU</text>
+            <text x="2" y="62" font-family="'Monument Grotesk', Arial, sans-serif" font-size="10" font-weight="400"
+              fill="currentColor">Aix</text>
+            <text x="35" y="62" font-family="'Monument Grotesk', Arial, sans-serif" font-size="10" font-weight="400"
+              fill="currentColor">Marseille</text>
+            <text x="90" y="62" font-family="'Monument Grotesk', Arial, sans-serif" font-size="10" font-weight="400"
+              fill="currentColor">Université</text>
           </svg>
           <p style="font-size: 0.92rem; color: #CCCCCC;">
-            Portail de ressources pédagogiques pour la SAÉ 301 / 303 (BUT MMI2 — IUT d’Arles), conforme à la charte graphique Aix Marseille Université (amU).
+            Portail de ressources pédagogiques pour la SAÉ 301 / 303 (BUT MMI2 — IUT d’Arles), conforme à la charte
+            graphique Aix Marseille Université (amU).
           </p>
         </div>
 
@@ -196,4 +202,5 @@
   <script src="js/main.js"></script>
   <script src="js/todo.js"></script>
 </body>
+
 </html>
